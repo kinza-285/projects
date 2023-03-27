@@ -1,0 +1,12 @@
+p style="color: green" = notice
+
+== render @project
+
+div
+  => link_to "Edit this project", edit_project_path(@project)
+  '|
+  =< link_to "Back to projects", projects_path
+  '|
+  = link_to "Destroy this project", @project, method: :delete
+  br
+  = link_to "Show this project events", project_events_path(project_id: @project.id)

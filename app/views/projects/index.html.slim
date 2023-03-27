@@ -1,0 +1,10 @@
+p style="color: green" = notice
+
+h1 Projects
+
+#projects
+  - @projects.each do |project|
+    = link_to project.name.capitalize, project
+    br
+
+= link_to "New project", new_project_path

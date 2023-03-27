@@ -1,0 +1,11 @@
+.row
+  .col-12
+    = simple_form_for [@project, Comment.new], data: { \
+        action: "turbo:submit-end->comments#resetForm", comments_target: "input_form" } \
+        do | f |
+      = f.input :body, \
+              label: false, \
+              input_html: { placeholder: "Type your comment here" }, \
+               wrapper_html: { class: "form_control" }, \
+                class: "form_control input_group_lg"
+      = f.submit "Comment", class: "btn btn-outline-secondary btn-lg"

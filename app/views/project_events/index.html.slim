@@ -1,0 +1,20 @@
+p style="color: green" = notice
+
+h1 Project Events for #{@project.name.capitalize}
+
+#project_events
+  table
+    tr
+      th
+        | Type
+      th
+        | Body
+    - @project_events.each do |pe|
+      tr
+        th
+          = pe.event_type
+        th
+          = pe.body
+
+= link_to "Back to project", project_path(@project)
+

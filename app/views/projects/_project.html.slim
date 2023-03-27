@@ -1,0 +1,11 @@
+div id="#{dom_id project}" data-controller="comments"
+  = turbo_stream_from dom_id(project)
+  h1
+    = project.name
+    br
+    = project.status
+  #comments[data-comments-target="container"]
+    - @comments&.each do |comment|
+      = render "comments/comment", comment: comment
+  #new_comment
+    = render "comments/form", project: project
